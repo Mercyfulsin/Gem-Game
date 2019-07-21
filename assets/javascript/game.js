@@ -18,19 +18,24 @@ function generateHTML(){
         crystalImage.attr("data-value", 0);
         crystalImage.click(function(){
             total += parseInt($(this).attr("data-value"));
-            console.log(total);
             updateHTML();
+            checkConditions();
         });
         $("#gems-view").append(crystalImage);
     }
 }
 
 function generateRandomness(){
+    //Generates a new goal to reach
     goal = randomNum(19,120);
+    //Gives each gem a new random value
     $(".gems").each(function(){
         $(this).attr("data-value", randomNum(1,12));
     })
+    //resets current total
     total = 0;
+    //update the HTML to reflect changes
+    updateHTML();
 }
 
 function updateHTML(){
@@ -45,6 +50,20 @@ function updateHTML(){
 }
 
 function randomNum(low,high){
+    //Generates a random number and rounds down with low and high as floor and ceiling.
     var number = Math.floor(Math.random() * (high - low) ) + low;
     return number
+}
+
+function checkConditions(){
+    //If current total exceeds goal, you lose. Generate new goal
+    if(total > goal){
+        losses++;
+        generateRandomness();
+    }
+    //If current total equals goal, you win. Generate new goal
+    else if(total === goal){
+        wins++;
+        generateRandomness();
+    }
 }
