@@ -4,3 +4,7 @@
     border-color: yellow;
     margin: 5px;
 }
+.card{
+    margin: 0 auto;
+    width: 400px;
+}

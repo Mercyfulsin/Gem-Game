@@ -1,32 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Gem Game</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <!-- Top part of the HTML -->
-            <div class="row" id="head">
-                <div class="col-lg-12 mt-3">
-                    <h1 style="text-align: center;">Gem Game</h1>
-                </div>
-            </div>
-            <!-- Stat part -->
-            <div class="row" id="stats">
-                <div class="col-lg-12">
 
-                </div>
-            </div>
-            <!-- Gem Part -->
-            <div class="row">
-                <div class="text-center col-lg-12" id="gems-view">
-                </div>
+<head>
+    <title>Gem Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Top part of the HTML -->
+        <div class="row" id="head">
+            <div class="col-lg-12 mt-3">
+                <h1 style="text-align: center;">Gem Game</h1>
             </div>
         </div>
+        <!-- Stat part -->
+        <div class="row" id="stats">
+            <div class="col-lg-4" id="information-view">
+                <div class="card text-center text-white bg-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Information</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Instructions: </h5>
+                        <p class="card-text">"Each crystal has a random number assigned to it. Win by getting points
+                            equal to goal, but be careful, going over even by 1 means you instantly lose!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" id="stats-view">
+                <div class="card text-center text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Stats</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Your Record:</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" id="game-view">
+                    <div class="card text-center text-white bg-secondary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Game</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Number to Reach:</h5>
+                            <p class="card-text" id="goal"></p>
+                            <h5 class="card-title">Current Points:</h5>
+                            <p class="card-text" id="total"></p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- Gem Part -->
+        <div class="row">
+            <div class="text-center col-lg-12" id="gems-view">
+            </div>
+        </div>
+    </div>
 
-        <script src="assets/javascript/game.js"></script>
-    </body>
+    <script src="assets/javascript/game.js"></script>
+</body>
+
 </html>
